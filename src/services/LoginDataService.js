@@ -1,3 +1,4 @@
-import http from "../http-common";
+import { baseurl } from "../http-common"
+
 
 export default new loginDataService();
