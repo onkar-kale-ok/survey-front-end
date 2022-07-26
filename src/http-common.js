@@ -1,18 +1,18 @@
 import axios from "axios";
 
-var baseurl = "";
+let baseurl = "";
 if (process.env.NODE_ENV === "development") {
-  baseurl = "http://localhost/api/";
+  baseurl = "http://ec2-54-177-20-6.us-west-1.compute.amazonaws.com:9005/api/";
 } else {
-  baseurl = "/api/";
+  baseurl = "http://localhost:9005/api/";
 }
- 
-export default axios.create({
-  baseURL: baseurl,
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-    "X-Requested-With": "XMLHttpRequest",
-    crossDomain: true
-  }
-});
+export {baseurl};
+// export default axios.create({
+//   baseURL: baseurl,
+//   headers: {
+//     Accept: "application/json",
+//     "Content-Type": "application/json",
+//     "X-Requested-With": "XMLHttpRequest",
+//     crossDomain: true
+//   }
+// });

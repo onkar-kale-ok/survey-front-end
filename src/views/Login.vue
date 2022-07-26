@@ -52,7 +52,7 @@ export default {
 
 <script>
 import axios from "axios";
-
+import { baseurl } from "../http-common"
 export default {
   name: "Login",
 
@@ -73,7 +73,7 @@ export default {
       if (this.input.username != "" && this.input.password != "") {
         axios({
           method: "GET",
-          url: "http://localhost:9005/api/survey/login?userEmail="+ this.input.username + "&userPassword=" + this.input.password,
+          url: baseurl+"survey/login?userEmail="+ this.input.username + "&userPassword=" + this.input.password,
           headers: {
     'x-developer-token': 'c256f988-459a-43ca-8fef-9c14f7134900',
     'x-api-key': 'qwrtrthedwd2124@#$%2sSQw2',

@@ -71,6 +71,7 @@ import axios from "axios";
 import Datepicker from 'vue3-datepicker'
 import moment from 'moment'
 import WebStorageCache from 'web-storage-cache'
+import { baseurl } from "../http-common"
 
 export default {
   name: "add-tutorial",
@@ -128,7 +129,7 @@ export default {
 
       var config = {
         method: 'post',
-        url: 'http://localhost:9005/api/surveyparticipants/bulkCreateSurveyParticipant',
+        url: baseurl+'surveyparticipants/bulkCreateSurveyParticipant',
         headers: {
           'x-developer-token': 'c256f988-459a-43ca-8fef-9c14f7134900',
           'x-api-key': 'qwrtrthedwd2124@#$%2sSQw2',
@@ -189,7 +190,7 @@ export default {
       console.log(data, "++++++++++++++++pppppppppppppppppppp++++")
       var config = {
         method: 'post',
-        url: 'http://localhost:9005/api/surveyQuestion/bulkCreateSurveyQuestion',
+        url: baseurl+'surveyQuestion/bulkCreateSurveyQuestion',
         headers: {
           'x-developer-token': 'c256f988-459a-43ca-8fef-9c14f7134900',
           'x-api-key': 'qwrtrthedwd2124@#$%2sSQw2',
@@ -232,7 +233,7 @@ export default {
       var surveyd;
       var config = {
         method: 'post',
-        url: 'http://localhost:9005/api/surveydetails/createSurvey',
+        url: baseurl+'surveydetails/createSurvey',
         headers: {
           'x-developer-token': 'c256f988-459a-43ca-8fef-9c14f7134900',
           'x-api-key': 'qwrtrthedwd2124@#$%2sSQw2',

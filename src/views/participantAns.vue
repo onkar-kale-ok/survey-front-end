@@ -85,7 +85,7 @@ export default {
 
       var config = {
         method: 'GET',
-        url: 'http://localhost:9005/api/surveyparticipantsanswer/getSurveyParticipantAnswers?surveyId='+this.$route.query.surveyId,
+        url: baseurl+'surveyparticipantsanswer/getSurveyParticipantAnswers?surveyId='+this.$route.query.surveyId,
         headers: {
           'x-developer-token': 'c256f988-459a-43ca-8fef-9c14f7134900',
           'x-api-key': 'qwrtrthedwd2124@#$%2sSQw2',

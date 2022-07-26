@@ -143,7 +143,7 @@ export default {
 
     var config = {
       method: 'post',
-      url: 'http://localhost:9005/api/surveyparticipants/bulkCreateSurveyParticipant',
+      url: baseurl+'surveyparticipants/bulkCreateSurveyParticipant',
       headers: {
         'x-developer-token': 'c256f988-459a-43ca-8fef-9c14f7134900',
         'x-api-key': 'qwrtrthedwd2124@#$%2sSQw2',
@@ -186,7 +186,7 @@ export default {
 
     var config = {
       method: 'put',
-      url: 'http://localhost:9005/api/surveydetails/updateSurvey',
+      url: baseurl+'surveydetails/updateSurvey',
       headers: {
         'x-developer-token': 'c256f988-459a-43ca-8fef-9c14f7134900',
         'x-api-key': 'qwrtrthedwd2124@#$%2sSQw2',
@@ -213,7 +213,7 @@ export default {
 
     var config = {
       method: 'post',
-      url: 'http://localhost:9005/api/surveydetails/surveyDetailsBySurveyId',
+      url: baseurl+'surveydetails/surveyDetailsBySurveyId',
       headers: {
         'x-developer-token': 'c256f988-459a-43ca-8fef-9c14f7134900',
         'x-api-key': 'qwrtrthedwd2124@#$%2sSQw2',
@@ -251,7 +251,7 @@ export default {
       });
       var config = {
         method: 'delete',
-        url: 'http://localhost:9005/api/surveyQuestion/deleteQuestionById',
+        url: baseurl+'surveyQuestion/deleteQuestionById',
         headers: {
           'x-developer-token': 'c256f988-459a-43ca-8fef-9c14f7134900',
           'x-api-key': 'qwrtrthedwd2124@#$%2sSQw2',
@@ -305,7 +305,7 @@ export default {
       console.log(data, "++++++++++++++++pppppppppppppppppppp++++")
       var config = {
         method: 'post',
-        url: 'http://localhost:9005/api/surveyQuestion/bulkCreateSurveyQuestion',
+        url: baseurl+'surveyQuestion/bulkCreateSurveyQuestion',
         headers: {
           'x-developer-token': 'c256f988-459a-43ca-8fef-9c14f7134900',
           'x-api-key': 'qwrtrthedwd2124@#$%2sSQw2',

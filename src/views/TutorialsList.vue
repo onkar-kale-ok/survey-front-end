@@ -135,7 +135,7 @@ var cache = new WebStorageCache();
       if (sort == "asc") {
         var config = {
           method: 'get',
-          url: 'http://localhost:9005/api/surveydetails/surveyList?userId='+id,
+          url: baseurl+'surveydetails/surveyList?userId='+id,
           headers: {
             'x-developer-token': 'c256f988-459a-43ca-8fef-9c14f7134900',
             'x-api-key': 'qwrtrthedwd2124@#$%2sSQw2'
@@ -186,7 +186,7 @@ var cache = new WebStorageCache();
 
             var config = {
               method: 'delete',
-              url: 'http://localhost:9005/api/surveydetails/deleteSurveyById',
+              url: baseurl+'surveydetails/deleteSurveyById',
               headers: {
                 'x-developer-token': 'c256f988-459a-43ca-8fef-9c14f7134900',
                 'x-api-key': 'qwrtrthedwd2124@#$%2sSQw2',
@@ -238,7 +238,7 @@ var cache = new WebStorageCache();
 
       var config = {
         method: 'delete',
-        url: 'http://localhost:9005/api/surveydetails/deleteSurveyById',
+        url: baseurl+'surveydetails/deleteSurveyById',
         headers: {
           'x-developer-token': 'c256f988-459a-43ca-8fef-9c14f7134900',
           'x-api-key': 'qwrtrthedwd2124@#$%2sSQw2',

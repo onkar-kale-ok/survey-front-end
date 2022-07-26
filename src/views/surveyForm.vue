@@ -141,7 +141,7 @@ export default {
       var data = JSON.stringify(this.finalArray)
       var config = {
         method: 'post',
-        url: 'http://localhost:9005/api/surveyparticipantsanswer/createSurveyParticipantAns',
+        url: baseurl+'surveyparticipantsanswer/createSurveyParticipantAns',
         headers: {
           'x-developer-token': 'c256f988-459a-43ca-8fef-9c14f7134900',
           'x-api-key': 'qwrtrthedwd2124@#$%2sSQw2',
@@ -166,7 +166,7 @@ export default {
 
       var config = {
         method: 'post',
-        url: 'http://localhost:9005/api/surveydetails/surveyDetailsBySurveyId',
+        url: baseurl+'surveydetails/surveyDetailsBySurveyId',
         headers: {
           'x-developer-token': 'c256f988-459a-43ca-8fef-9c14f7134900',
           'x-api-key': 'qwrtrthedwd2124@#$%2sSQw2',
