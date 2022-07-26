@@ -1,0 +1,1 @@
+import{_ as e,e as t,f as s,h as a}from"./index.0ee80c0a.js";const r={name:"Secure",data(){return{}},mounted(){this.$parent.authenticated||this.$router.replace({name:"Login"})},methods:{}},o={class:"secure"},c=a("h1",null,"This is secure page",-1),n=[c];function i(_,d,u,h,p,f){return t(),s("div",o,n)}var m=e(r,[["render",i]]);export{m as default};

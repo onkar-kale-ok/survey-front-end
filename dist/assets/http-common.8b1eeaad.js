@@ -1,0 +1,1 @@
+import{a as e}from"./index.becf6c0c.js";var a="";a="/api/";var s=e.create({baseURL:a,headers:{Accept:"application/json","Content-Type":"application/json","X-Requested-With":"XMLHttpRequest",crossDomain:!0}});export{s as h};

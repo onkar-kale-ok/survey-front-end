@@ -1,0 +1,1 @@
+import{_ as a,e as s,f as n,x as r,B as t}from"./index.0ee80c0a.js";var o="/assets/home-banner.118de641.jpg";const c={data:()=>({banner:o})},_={class:"mx-2 v-container-fluid"};function d(e,l,i,m,p,f){return s(),n("div",_,[r(t,{class:"mx-2",src:e.banner,contain:""},null,8,["src"])])}var v=a(c,[["render",d]]);export{v as default};
