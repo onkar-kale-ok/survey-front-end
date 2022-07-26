@@ -1,4 +1,5 @@
-import http from "../http-common";
+import { baseurl } from "../http-common"
+
 class LessonDataService {
   getAllLessons(tutorialId) {
     return http.get(`/tutorials/${tutorialId}/lessons`);
