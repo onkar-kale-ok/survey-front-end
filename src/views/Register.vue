@@ -60,6 +60,7 @@
 
 <script>
 import axios from "axios";
+import { baseurl } from "../http-common"
 
 export default {
   name: "register",

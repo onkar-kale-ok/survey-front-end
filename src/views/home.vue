@@ -1,19 +1,20 @@
 
 <template class=" home-banner">
-    
+
       <div class="mx-2 v-container-fluid">
             <v-img
                 class="mx-2"
                 :src="banner"
-                contain 
+                contain
             ></v-img>
        </div>
-   
+
 </template>
 
 <script>
 
 import banner from '../assets/home-banner.jpg'
+import { baseurl } from "../http-common"
 
 export default {
 data: () => ({

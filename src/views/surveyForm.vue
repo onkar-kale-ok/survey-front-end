@@ -39,6 +39,7 @@
 <script>
 import TutorialDataService from "../services/TutorialDataService";
 import axios from "axios";
+import { baseurl } from "../http-common"
 export default {
   name: "add-tutorial",
   data() {
@@ -204,6 +205,13 @@ export default {
   border-color: black !important
 }
 
+input[type="radio"] {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
 
 .v-main__wrap h4 {
   margin-bottom: 18px;

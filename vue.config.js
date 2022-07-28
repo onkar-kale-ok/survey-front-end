@@ -5,8 +5,8 @@ module.exports = defineConfig({
 }),
 module.exports = {
   devServer: {
-       host: process.env.NODE_ENV,
-        port: 8081
+    host: 'localhost',
+    port: 8081
   },
   publicPath: process.env.NODE_ENV === 'development' ? '/' : '/tutorial-frontend-1/',
 }

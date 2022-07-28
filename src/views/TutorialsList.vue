@@ -19,7 +19,7 @@ import axios from "axios";
 import {useRoute} from "vue-router";
 import Router from '../router'
 import WebStorageCache from 'web-storage-cache'
-
+import { baseurl } from "../http-common"
 
 export default defineComponent({
   name: "App",

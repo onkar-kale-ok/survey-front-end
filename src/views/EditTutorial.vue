@@ -48,7 +48,10 @@
     </v-row>
     <v-card-text>
       <v-text-field label="Add more participants seperated by comma" v-model="participants"></v-text-field>
-      <v-btn @click="addParticipants">Add participants</v-btn>
+      <v-row>
+      <v-btn @click="addParticipants">Add participants</v-btn>&nbsp&nbsp&nbsp
+      <v-btn @click="cancel">Cancel</v-btn>
+      </v-row>
       </v-card-text>
 
   </v-card-text>
@@ -62,6 +65,7 @@ import axios from "axios";
 import Datepicker from 'vue3-datepicker'
 import moment from 'moment'
 import WebStorageCache from 'web-storage-cache'
+import { baseurl } from "../http-common"
 
 export default {
   name: "add-tutorial",
@@ -331,9 +335,8 @@ export default {
       this.QuestionDetails[i].surveyquestion_answer.push(this.QuestionDetails[i].surveyquestion_answer.length+1)
     },
     cancel() {
-      this.$router.push({
-        name: 'tutorials'
-      });
+    let id=this.userId
+      this.$router.push({ name: 'tutorials',query: { id } });
     }
   }
 }

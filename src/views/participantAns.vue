@@ -38,7 +38,8 @@
 </template>
 <v-card-text>
 <v-row justify="center">
-<v-btn btn style="background: #6495ED;" onclick="window.print();" dark>Download</v-btn>
+<v-btn btn style="background: #6495ED;" onclick="window.print();" dark>Download</v-btn>&nbsp&nbsp&nbsp
+<v-btn @click="cancel">Cancel</v-btn>
 </v-row>
 </v-card-text>
 </v-form>
@@ -49,6 +50,8 @@
 
 <script>
 import TutorialDataService from "../services/TutorialDataService";
+import { baseurl } from "../http-common"
+import WebStorageCache from 'web-storage-cache'
 import axios from "axios";
 export default {
   name: "add-tutorial",
@@ -79,6 +82,9 @@ export default {
   },
   mounted() {
     this.displayQuestions()
+    var cache = new WebStorageCache();
+    console.log(cache.get('userId'),"=================================================================")
+    this.userId=cache.get('userId');
   },
   methods: {
     displayQuestions() {
@@ -103,9 +109,8 @@ export default {
         });
     },
     cancel() {
-      this.$router.push({
-        name: 'tutorials'
-      });
+    let id=this.userId
+      this.$router.push({ name: 'tutorials',query: { id } });
     }
   }
 }

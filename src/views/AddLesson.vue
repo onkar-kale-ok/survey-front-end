@@ -27,6 +27,7 @@
 </template>
 <script>
 import LessonDataService from "../services/LessonDataService";
+import { baseurl } from "../http-common"
 export default {
   name: "add-lesson",
   props: ['tutorialId'],
@@ -51,7 +52,7 @@ export default {
       LessonDataService.createLesson(this.tutorialId, data)
         .then(response => {
           this.lesson.id = response.data.id;
-        
+
           this.$router.push({ name: 'view' , params: { id: this.tutorialId }} );
         })
         .catch(e => {
