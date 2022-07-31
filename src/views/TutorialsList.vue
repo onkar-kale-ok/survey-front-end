@@ -84,9 +84,9 @@ var cache = new WebStorageCache();
           width: "10%",
           display: function(row) {
             return (
-              '<button type="button" style="background: #6495ED; width:100%;" data-id="' +
+              '<button type="button" style=" width:70%;size:160px;" data-id="' +
               row.id +
-              '" class="is-rows-el edit-btn">Edit</button>'
+              '" class="is-rows-el edit-btn">✎</button>'
             );
           },
         },
@@ -96,9 +96,9 @@ var cache = new WebStorageCache();
           width: "10%",
           display: function(row) {
             return (
-              '<button type="button" style="background: #E95462; width:100%;" data-id="' +
+              '<button type="button" style= "width:70%; size:160px;" data-id="' +
               row.id +
-              '" class="is-rows-el delete-btn">Delete</button>'
+              '" class="is-rows-el delete-btn">❌</button>'
             );
           },
         },
@@ -136,7 +136,7 @@ var cache = new WebStorageCache();
       table.isLoading = true;
 
       table.isReSearch = offset == undefined ? true : false;
-      
+
       if (sort == "asc") {
         var config = {
           method: 'get',

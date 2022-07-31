@@ -224,8 +224,6 @@ export default {
 }
 </script>
 <style>
-//:disabled {   color: black !important; font-color:black;
-//font-weight: bold;}
 .font-class-name * {
   font-size: 24px;
   font-color: black !important;
