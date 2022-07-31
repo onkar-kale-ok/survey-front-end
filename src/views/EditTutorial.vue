@@ -79,7 +79,7 @@ export default {
       },
       items: ['Market Research Survey', 'Customer Feedback Survey', 'Product Feedback Survey'],
       quesArray: [],
-      quesarray: ['description', 'checkbox', 'mcq'],
+      quesarray: ['description', 'checkbox', 'mcq','slider'],
       message: "Enter data and click save",
       flag: false,
       active: 1,

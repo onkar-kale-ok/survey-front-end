@@ -5,7 +5,7 @@
   <v-text-field label="Survey Name" v-model="tutorial.title" />
   <v-text-field label="Survey Description" v-model="tutorial.description" />
   <v-select :items="items" filled label="Survey Type" v-model="tutorial.type"></v-select>
-  <v-text-field name="startDate" label="Start Date (mm/dd/yy)" type="date" v-model="startDate"></v-text-field>
+  <v-text-field name="startDate" required pattern="\d{4}-\d{2}-\d{2}" label="Start Date (mm/dd/yy)" type="date" v-model="startDate"></v-text-field>
   <v-text-field name="endDate" label="End Date (mm/dd/yy)" type="date" v-model="endDate"></v-text-field>
 
   <v-row justify="center">
@@ -18,7 +18,7 @@
     </v-col>
     <v-col col="2"> </v-col>
   </v-row>
-  <v-card-text v-if="flag==true">
+  <v-card-text v-if="flag==false">
 
     <v-card-text v-for="(textField, i) in textFields" :key="i">
       <v-text-field :label="textField.label1" v-model="textField.value1"></v-text-field>
@@ -83,9 +83,9 @@ export default {
         description: "",
         published: false,
       },
-      items: ['Market Research Survey', 'Customer Feedback Survey', 'Product Feedback Survey'],
+      items: ['Market Research Survey', 'Customer Feedback Survey', 'Predictive Survey'],
       quesArray: [],
-      quesarray: ['description', 'checkbox', 'mcq'],
+      quesarray: ['description', 'checkbox', 'mcq','slider'],
       message: "Enter data and click save",
       flag: false,
       active: 1,

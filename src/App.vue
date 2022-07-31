@@ -11,42 +11,42 @@
             <v-app-bar-title  >My Surveys</v-app-bar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items>
-              <v-btn v-if="$route.name == 'home' || $route.name == 'login' || $route.name == 'register' || $route.name == 'about' || $route.name == 'tutorials' || $route.name == 'add'"
+              <v-btn v-if="$route.name == 'privacy'||$route.name == 'response'||$route.name == 'view'||$route.name == 'edit'||$route.name == 'home' || $route.name == 'login' || $route.name == 'register' || $route.name == 'about' || $route.name == 'tutorials' || $route.name == 'add'"
                     variant="text"
                     @click="goHome" >
                   Home
                 </v-btn>
-                <v-btn v-if="$route.name == 'home' || $route.name == 'login' || $route.name == 'register' || $route.name == 'about' || $route.name == 'tutorials' || $route.name == 'add'"
+                <v-btn v-if="$route.name == 'privacy'||$route.name == 'response'||$route.name == 'view'||$route.name == 'edit'||$route.name == 'home' || $route.name == 'login' || $route.name == 'register' || $route.name == 'about' || $route.name == 'tutorials' || $route.name == 'add'"
                     variant="text"
                     @click="goAbout"
                     >
                   About Us
                 </v-btn>
-                <v-btn v-if="$route.name == 'add' || $route.name == 'tutorials' || userId"
+                <v-btn v-if="($route.name == 'privacy'&& userId)||$route.name == 'add' || $route.name == 'tutorials' || userId"
                     variant="text"
                     @click="goList"
                     >
                   List
                 </v-btn>
-                <v-btn v-if="$route.name == 'add' || $route.name == 'tutorials' || userId"
+                <v-btn v-if="($route.name == 'privacy'&& userId)||$route.name == 'add' || $route.name == 'tutorials' || userId"
                     variant="text"
                     @click="goAdd"
                     >
                   Add Survey
                 </v-btn>
-                <v-btn v-if="($route.name == 'home' || $route.name == 'login' || $route.name == 'register' || $route.name == 'about') && !userId"
+                <v-btn v-if="($route.name == 'privacy'||$route.name == 'home' || $route.name == 'login' || $route.name == 'register' || $route.name == 'about') && !userId"
                     variant="text"
                     @click="goLogin"
                     >
                   Login
                 </v-btn>
-                <v-btn v-if="($route.name == 'home' || $route.name == 'login' || $route.name == 'register' || $route.name == 'about') && !userId"
+                <v-btn v-if="($route.name == 'privacy'||$route.name == 'home' || $route.name == 'login' || $route.name == 'register' || $route.name == 'about') && !userId"
                     variant="text"
                     @click="goRegister"
                     >
                   Register
                 </v-btn>
-                <v-btn v-if="($route.name == 'add' || $route.name == 'tutorials') || userId"
+                <v-btn v-if="(($route.name == 'privacy'&& userId)||$route.name == 'add' || $route.name == 'tutorials') || userId"
                     variant="text"
                     @click="logouttab"
                     >
