@@ -67,15 +67,11 @@ var cache = new WebStorageCache();
           field: "view",
           width: "10%",
           display: function(row) {
-          return (
-          '<a href="http://ec2-54-67-126-182.us-west-1.compute.amazonaws.com/view?surveyId=' +
-          row.id +
-          '" data-id="' +
-          row.id +
-          '" class="name-btn">http://ec2-54-67-126-182.us-west-1.compute.amazonaws.com/view?surveyId=' +
-          row.id +
-          "</button>"
-        );
+            return (
+              '<button type="button" style=" width:70%;size:160px;" data-id="' +
+              row.id +
+              '" class="is-rows-el view-btn">👁</button>'
+            );
           },
         },
         {

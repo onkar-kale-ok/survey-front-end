@@ -20,15 +20,6 @@
 
     <v-text-field v-if="que.surveyquestion_type=='description'" label="Please add your response here" v-model="desc[que.id]" />
 
-
-<v-rating v-if="que.surveyquestion_type=='slider'"
-      v-model="rating[que.id]"
-      :length="length"
-      color="red lighten-3"
-      background-color="grey lighten-1"
-      large
-    ></v-rating><br>
-
     <v-slider v-if="que.surveyquestion_type=='slider'"
     v-model="val[que.id]"
           label="thumb-color"
