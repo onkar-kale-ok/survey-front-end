@@ -11,24 +11,30 @@
             <v-app-bar-title  >My Surveys</v-app-bar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items>
-              <v-btn v-if="$route.name == 'privacy'||$route.name == 'response'||$route.name == 'view'||$route.name == 'edit'||$route.name == 'home' || $route.name == 'login' || $route.name == 'register' || $route.name == 'about' || $route.name == 'tutorials' || $route.name == 'add'"
+              <v-btn v-if="$route.name == 'Users'||$route.name == 'privacy'||$route.name == 'response'||$route.name == 'view'||$route.name == 'edit'||$route.name == 'home' || $route.name == 'login' || $route.name == 'register' || $route.name == 'about' || $route.name == 'tutorials' || $route.name == 'add'"
                     variant="text"
                     @click="goHome" >
                   Home
                 </v-btn>
-                <v-btn v-if="$route.name == 'privacy'||$route.name == 'response'||$route.name == 'view'||$route.name == 'edit'||$route.name == 'home' || $route.name == 'login' || $route.name == 'register' || $route.name == 'about' || $route.name == 'tutorials' || $route.name == 'add'"
+                <v-btn v-if="$route.name == 'privacy'||$route.name == 'response'||$route.name == 'view'||$route.name == 'edit'||$route.name == 'home' || $route.name == 'login' || $route.name == 'register' || $route.name == 'about' || $route.name == 'tutorials'||$route.name == 'users' || $route.name == 'add'"
                     variant="text"
                     @click="goAbout"
                     >
                   About Us
                 </v-btn>
-                <v-btn v-if="($route.name == 'privacy'&& userId)||$route.name == 'add' || $route.name == 'tutorials' || userId"
+                <v-btn v-if="($route.name == 'privacy'&& userId)||$route.name == 'add' || $route.name == 'tutorials' || $route.name == 'users' || userId"
                     variant="text"
                     @click="goList"
                     >
                   List
                 </v-btn>
-                <v-btn v-if="($route.name == 'privacy'&& userId)||$route.name == 'add' || $route.name == 'tutorials' || userId"
+                <v-btn v-if="role=='super_admin'||(($route.name == 'privacy'&& userId) || $route.name == 'add' || $route.name == 'users' || $route.name == 'tutorials' || userId)"
+                    variant="text"
+                    @click="goUserList"
+                    >
+                  User List
+                </v-btn>
+                <v-btn v-if="($route.name == 'privacy'&& userId)||$route.name == 'add'||$route.name == 'users' || $route.name == 'tutorials' || userId"
                     variant="text"
                     @click="goAdd"
                     >
@@ -46,7 +52,7 @@
                     >
                   Register
                 </v-btn>
-                <v-btn v-if="(($route.name == 'privacy'&& userId)||$route.name == 'add' || $route.name == 'tutorials') || userId"
+                <v-btn v-if="(($route.name == 'privacy'&& userId)||$route.name == 'add'|| $route.name == 'users' || $route.name == 'tutorials') || userId"
                     variant="text"
                     @click="logouttab"
                     >
@@ -92,7 +98,8 @@ export default {
                     username: "bharath",
                     password: "test"
                 },
-                url:""
+                url:"",
+                role:""
             }
   }),
 
@@ -102,8 +109,8 @@ export default {
                 this.url="login"
             }*/
             var cache = new WebStorageCache();
-            console.log(cache.get('userId'),"=================================================================")
             this.userId=cache.get('userId');
+            this.role = cache.get('role');
 
         },
 
@@ -112,6 +119,7 @@ export default {
   this.$router.push({ name: 'login' });
   this.url="login"
     localStorage.removeItem('userId');
+    localStorage.removeItem('role');
     var cache = new WebStorageCache();
     this.userId = cache.get('userId')?cache.get('userId'):''
   },
@@ -143,14 +151,25 @@ export default {
       this.url="tutorials"
       var cache = new WebStorageCache();
       this.userId = cache.get('userId')?cache.get('userId'):''
+      this.role = cache.get('role');
       let id= this.userId
       console.log(this.userId,"***********************************")
       this.$router.push({ name: 'tutorials',query: { id } });
+    },
+    goUserList() {
+      this.url="users"
+      var cache = new WebStorageCache();
+      this.userId = cache.get('userId')?cache.get('userId'):''
+      this.role = cache.get('role');
+      let id= this.userId
+      console.log(this.userId,"***********************************")
+      this.$router.push({ name: 'Users'});
     },
     goLogin() {
       this.$router.push({ name: 'login' });
       this.url="login"
       var cache = new WebStorageCache();
+      this.role = cache.get('role');
       this.userId = cache.get('userId')?cache.get('userId'):''
     },
     goRegister() {

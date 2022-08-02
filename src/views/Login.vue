@@ -53,6 +53,7 @@ export default {
 <script>
 import axios from "axios";
 import { baseurl } from "../http-common"
+import WebStorageCache from 'web-storage-cache'
 export default {
   name: "Login",
 
@@ -81,10 +82,13 @@ export default {
   },
         }).then(
           (result) => {
+          var cache = new WebStorageCache();
             console.log("result.data", result);
             if (result.data.resultCode == 200) {
             let id=result.data.responseData[0].id
+            let role = result.data.responseData[0].user_role
               this.$router.push({ name: 'tutorials',query: { id } });
+              cache.set('role', role);
             } else {
             alert("Invalid user ");
             }
