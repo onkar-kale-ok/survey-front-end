@@ -6,7 +6,7 @@
 </v-card-text>
 <table-lite :has-checkbox="true" :is-loading="table.isLoading" :is-re-search="table.isReSearch" :columns="table.columns" :rows="table.rows" :rowClasses="table.rowClasses" :total="table.totalRecordCount" :sortable="table.sortable"
   @do-search="doSearch" @is-finished="tableLoadingFinish" @return-checked-rows="updateCheckedRows" @row-clicked="rowClicked"></table-lite><br><br>
-  <v-row v-if="table.totalRecordCount==0" justify="center">
+  <v-row v-if="!table.rows" justify="center">
     <v-btn @click="addTutorial" style="background: #6495ED; width:20%;">Add Survey</v-btn>
   </v-row><br>
 </template>
